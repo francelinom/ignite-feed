@@ -1,9 +1,9 @@
 import { Header } from "./components/Header";
+import { Sidebar } from "./components/Sidebar";
+import { Post } from "./components/Post";
 
 import style from "./App.module.css";
 import "./index.css";
-import { Post } from "./Post";
-import { Sidebar } from "./components/Sidebar";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <div className={style.wrapper}>
         <Sidebar />
         <main>
-          <Post author="Francelino Marcílio" content="Meu primeiro post"/>
-          <Post author="Milene Gomes" content="Meu segundo post"/>
+          <Post author="Francelino Marcílio" content="Meu primeiro post" />
+          <Post author="Milene Gomes" content="Meu segundo post" />
         </main>
       </div>
     </div>
