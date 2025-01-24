@@ -1,14 +1,24 @@
-import { Header } from './components/Header'
-import './index.css'
+import { Header } from "./components/Header";
+
+import style from "./App.module.css";
+import "./index.css";
+import { Post } from "./Post";
+import { Sidebar } from "./components/Sidebar";
 
 function App() {
-
   return (
-    <>
-    <Header></Header>
-      <p>Bem vindo!</p>
-    </>
-  )
+    <div>
+      <Header />
+
+      <div className={style.wrapper}>
+        <Sidebar />
+        <main>
+          <Post author="Francelino Marcílio" content="Meu primeiro post"/>
+          <Post author="Milene Gomes" content="Meu segundo post"/>
+        </main>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
