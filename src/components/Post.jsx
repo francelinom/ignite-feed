@@ -33,6 +33,7 @@ export function Post({ author, publishedAt, content }) {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
 
@@ -42,6 +43,10 @@ export function Post({ author, publishedAt, content }) {
     });
 
     setCommentts(commentsWithoutDeletedOne);
+  }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity("Esse campo é obrigatório!!!");
   }
 
   return (
@@ -84,10 +89,14 @@ export function Post({ author, publishedAt, content }) {
           name="comment"
           value={newCommentText}
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         ></textarea>
 
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={!newCommentText.length}>
+            Publicar
+          </button>
         </footer>
       </form>
 
